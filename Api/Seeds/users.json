@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "firstName": "Luis",
+    "middleName": "",
+    "lastName": "Suarez",
+    "suffix": "Mr.",
+    "emailAddress": "lsuarez@barcelona.com",
+    "password": "4*&c^crH~Z%9",
+    "roleId": 2,
+    "role": "Admin"
+  },
+  {
+    "id": 2,
+    "firstName": "Lionel",
+    "middleName": "",
+    "lastName": "Messi",
+    "suffix": "Mr.",
+    "emailAddress": "lmessi@barcelona.com",
+    "password": "PO2PosU$A7fB",
+    "roleId": 1,
+    "role": "User"
+  },
+  {
+    "id": 3,
+    "firstName": "Phillipe",
+    "middleName": "",
+    "lastName": "Coutinho",
+    "suffix": "",
+    "emailAddress": "pcoutinho@barcelona.com",
+    "password": "vOUFfsOva#iD",
+    "roleId": 1,
+    "role": "User"
+  },
+  {
+    "id": 4,
+    "firstName": "Gerard",
+    "middleName": "",
+    "lastName": "Pique",
+    "suffix": "",
+    "emailAddress": "gpique@barcelona.com",
+    "password": "vOUFfsOva#iD",
+    "roleId": 2,
+    "role": "Admin"
+  },
+  {
+    "id": 5,
+    "firstName": "Jordi",
+    "middleName": "",
+    "lastName": "Alba",
+    "suffix": "",
+    "emailAddress": "jalba@barcelona.com",
+    "password": "vOUFfsOva#iD",
+    "roleId": 1,
+    "role": "User"
+  }
+]

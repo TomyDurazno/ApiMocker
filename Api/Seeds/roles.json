@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "role": "Admin",
+    "usercount": 1,
+    "type": "Default"
+  },
+  {
+    "id": "2",
+    "role": "User",
+    "usercount": 2,
+    "type": "Default"
+  },
+  {
+    "id": "3",
+    "role": "Reporter",
+    "usercount": 1,
+    "type": "Custom"
+  }
+]

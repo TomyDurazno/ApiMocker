@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "db97c101-0195-4d8e-a5da-ddd64527cf55",
+		"name": "TzedakApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test20181118@mailinator.com\",\r\n  \"password\": \"Test123\",\r\n  \"confirmPassword\": \"Test123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:16992/api/Account/Register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16992",
+					"path": [
+						"api",
+						"Account",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login (Token)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "test20181118@mailinator.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:16992/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16992",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer D7YD4d751JEekhsmA3i6EIQi-_IVsLzbbs9oQ9XfbyK0p9WgSXi3hYc7GfCunURdpRtuHPDhjSSoURFmTgKw6L4mU2Mt7mmW_DXbBIFt93R0bWq99W63gH0LGpG8N4_vizYVSXNmImOLZyj31N5CbM7pIcDmaSmWrGh18R37GOio8vpuFHss3d3Msx_pOHWnbtOTgAF3-fP2CCjyDWYnhsNiTZbrZ6ieZZEhJGPXmpB8pXaFiiwCy6Ac9rPXAmWr51BK3FGN4xsdrH53r90SlI6Tx45AdoHzF5ou2h2FdhSKgrLnssMvUHm_EzfIPALwPmuovEIrtArU7COPcMvoDLZhYjbO0QnGWc_l9ymw2pzszQLaXMFYHOAxwR-2OeHw8j7sfj0XUtfMh2UA1hmejxxUErMYydFf5_layUiqeSVTQtQWXvhBA3X0jmJpJeS_1sK6Jjxdqux5pV7N8FTOdEoginHF_X5aK3t-WbiHsCOh3Wp55ywfmbIPOimiqIpM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:16992/api/Account/UserInfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16992",
+					"path": [
+						"api",
+						"Account",
+						"UserInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ManageInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer D7YD4d751JEekhsmA3i6EIQi-_IVsLzbbs9oQ9XfbyK0p9WgSXi3hYc7GfCunURdpRtuHPDhjSSoURFmTgKw6L4mU2Mt7mmW_DXbBIFt93R0bWq99W63gH0LGpG8N4_vizYVSXNmImOLZyj31N5CbM7pIcDmaSmWrGh18R37GOio8vpuFHss3d3Msx_pOHWnbtOTgAF3-fP2CCjyDWYnhsNiTZbrZ6ieZZEhJGPXmpB8pXaFiiwCy6Ac9rPXAmWr51BK3FGN4xsdrH53r90SlI6Tx45AdoHzF5ou2h2FdhSKgrLnssMvUHm_EzfIPALwPmuovEIrtArU7COPcMvoDLZhYjbO0QnGWc_l9ymw2pzszQLaXMFYHOAxwR-2OeHw8j7sfj0XUtfMh2UA1hmejxxUErMYydFf5_layUiqeSVTQtQWXvhBA3X0jmJpJeS_1sK6Jjxdqux5pV7N8FTOdEoginHF_X5aK3t-WbiHsCOh3Wp55ywfmbIPOimiqIpM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:16992/api/Account/ManageInfo?returnUrl={returnUrl}&generateState={generateState}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16992",
+					"path": [
+						"api",
+						"Account",
+						"ManageInfo"
+					],
+					"query": [
+						{
+							"key": "returnUrl",
+							"value": "{returnUrl}"
+						},
+						{
+							"key": "generateState",
+							"value": "{generateState}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

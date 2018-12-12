@@ -1,0 +1,2 @@
+c:\Users\tcordara\AppData\Local\Temp\Temporary ASP.NET Files
+c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files
