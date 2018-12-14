@@ -40,20 +40,14 @@ namespace APIMocker.Extensiones
 
         public static T[] AsArray<T>(this T obj) => new T[] { obj };
 
-        public static dynamic[] AsArrayDynamicParams(params dynamic[] elements)
-        {
-            return elements;
-        }
+        public static dynamic[] AsArrayDynamicParams(params dynamic[] elements) => elements;
 
         public static string ToNullString<T>(this T obj) => obj?.ToString() ?? "NULL";
 
         /// <summary>
         /// Reverse bool value
         /// </summary>
-        public static bool ReverseBool(this bool boolean)
-        {
-            return !boolean;
-        }
+        public static bool ReverseBool(this bool boolean) => !boolean;
 
         /// <summary>
         /// Calls an action over a variable and the returns that variable
@@ -94,55 +88,9 @@ namespace APIMocker.Extensiones
             return !boolean.Value;
         }
 
-        #region DumpJson
-
-        //public static object DumpJson(this object value, string description = null)
-        //{
-        //    return GetJsonDumpTarget(value).Dump(description);
-        //}
-
-        //public static object DumpJson(this object value, string description, int depth)
-        //{
-        //    return GetJsonDumpTarget(value).Dump(description, depth);
-        //}
-
-        //public static object DumpJson(this object value, string description, bool toDataGrid)
-        //{
-        //    return GetJsonDumpTarget(value).Dump(description, toDataGrid);
-        //}
-
-        private static object GetJsonDumpTarget(object value)
-        {
-            object dumpTarget = value;
-            //if this is a string that contains a JSON object, do a round-trip serialization to format it:
-            var stringValue = value as string;
-            if (stringValue != null)
-            {
-                if (stringValue.Trim().StartsWith("{"))
-                {
-                    var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(stringValue);
-                    dumpTarget = Newtonsoft.Json.JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented);
-                }
-                else
-                {
-                    dumpTarget = stringValue;
-                }
-            }
-            else
-            {
-                dumpTarget = Newtonsoft.Json.JsonConvert.SerializeObject(value, Newtonsoft.Json.Formatting.Indented);
-            }
-            return dumpTarget;
-        }
-
-        #endregion
-
         #region String Extensions
 
-        public static string Concatenate(this IEnumerable<string> auxs)
-        {
-            return auxs.Aggregate(new StringBuilder(), (builder, s) => builder.Append(s)).ToString();
-        }
+        public static string Concatenate(this IEnumerable<string> auxs) => auxs.Aggregate(new StringBuilder(), (builder, s) => builder.Append(s)).ToString();
 
         #endregion
     }
@@ -156,7 +104,7 @@ namespace APIMocker.Extensiones
         #region Paths	
 
         //Internal use
-        private static string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        private static readonly string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
         public static string DesktopPath { get { return desktopPath; } }
 
@@ -206,26 +154,16 @@ namespace APIMocker.Extensiones
 
         #region MakeArray
 
-        public static T[] MakeArray<T>(params T[] arr)
-        {
-            return arr;
-        }
+        public static T[] MakeArray<T>(params T[] arr) => arr;
 
-        public static List<T> MakeList<T>(params T[] arr)
-        {
-            return arr.ToList();
-        }
+        public static List<T> MakeList<T>(params T[] arr) => arr.ToList();
 
         #endregion
 
         #region MakeTask
 
         //Bind-alike implementation (!?)
-        public static async Task<K> MakeTask<T, K>(Task<T> task, Func<T, K> func)
-        {
-            var result = await task;
-            return func(result);
-        }
+        public static async Task<K> MakeTask<T, K>(Task<T> task, Func<T, K> func) => func(await task);
 
         #endregion
 
@@ -359,15 +297,9 @@ namespace APIMocker.Extensiones
 
         #region Txt Read/Write
 
-        public static IEnumerable<string> ReadTxtFromDesktop(string fileName)
-        {
-            return _ReadTxt(fileName, true);
-        }
+        public static IEnumerable<string> ReadTxtFromDesktop(string fileName) => _ReadTxt(fileName, true);
 
-        public static IEnumerable<string> ReadTxt(string fileName)
-        {
-            return _ReadTxt(fileName, false);
-        }
+        public static IEnumerable<string> ReadTxt(string fileName) => _ReadTxt(fileName, false);
 
         private static IEnumerable<string> _ReadTxt(string fileName, bool fromDesktop)
         {
@@ -406,7 +338,7 @@ namespace APIMocker.Extensiones
 
         #region JSON Read/Write
 
-        public static Newtonsoft.Json.Linq.JObject ReadJSONObjectFromDesktop(string fileName)
+        public static JObject ReadJSONObjectFromDesktop(string fileName)
         {
             var fileStream = new FileStream(Path.Combine(desktopPath, fileName), FileMode.Open, FileAccess.Read);
 
@@ -417,7 +349,7 @@ namespace APIMocker.Extensiones
             }
         }
 
-        public static Newtonsoft.Json.Linq.JArray ReadJSONArrayFromDesktop(string fileName)
+        public static JArray ReadJSONArrayFromDesktop(string fileName)
         {
             var fileStream = new FileStream(Path.Combine(desktopPath, fileName), FileMode.Open, FileAccess.Read);
 
@@ -428,7 +360,7 @@ namespace APIMocker.Extensiones
             }
         }
 
-        public static void WriteJsonToDesktop(Newtonsoft.Json.Linq.JObject JObj, string fileName)
+        public static void WriteJsonToDesktop(JObject JObj, string fileName)
         {
             using (StreamWriter file = File.CreateText(Path.Combine(desktopPath, fileName)))
             using (JsonTextWriter writer = new JsonTextWriter(file))
@@ -501,7 +433,7 @@ namespace APIMocker.Extensiones
 
         public static void OpenFileFromDesktop(string fileName)
         {
-            System.Diagnostics.Process.Start(Path.Combine(desktopPath, fileName));
+            Process.Start(Path.Combine(desktopPath, fileName));
         }
 
         #endregion
@@ -513,7 +445,7 @@ namespace APIMocker.Extensiones
             while (DateTime.Now.TimeOfDay < timeStop)
             {
                 act.Invoke();
-                await System.Threading.Tasks.Task.Delay(milliseconds);
+                await Task.Delay(milliseconds);
             }
         }
 
@@ -522,7 +454,7 @@ namespace APIMocker.Extensiones
         {
             while (DateTime.Now.TimeOfDay < timeStop)
             {
-                await task.ContinueWith(t => System.Threading.Tasks.Task.Delay(milliseconds));
+                await task.ContinueWith(t => Task.Delay(milliseconds));
             }
         }
 
@@ -530,17 +462,17 @@ namespace APIMocker.Extensiones
         {
             while (DateTime.Now.TimeOfDay < timeStop)
             {
-                await System.Threading.Tasks.Task.Delay(millisecondsInterval);
+                await Task.Delay(millisecondsInterval);
             }
 
-            await System.Threading.Tasks.Task.Run(act);
+            await Task.Run(act);
         }
 
         public static async Task SetTimeOutAsync(int millisecondsInterval, TimeSpan timeStop, System.Threading.Tasks.Task act)
         {
             while (DateTime.Now.TimeOfDay < timeStop)
             {
-                await System.Threading.Tasks.Task.Delay(millisecondsInterval);
+                await Task.Delay(millisecondsInterval);
             }
 
             await act;
@@ -550,20 +482,11 @@ namespace APIMocker.Extensiones
 
         #region String Manipulation
 
-        public static IEnumerable<string> SplitBy(this string auxs, params char[] separators)
-        {
-            return auxs.Split(separators);
-        }
+        public static IEnumerable<string> SplitBy(this string auxs, params char[] separators) => auxs.Split(separators);
 
-        public static IEnumerable<string> SplitBy(this string auxs, params string[] separators)
-        {
-            return auxs.Split(separators, StringSplitOptions.None);
-        }
+        public static IEnumerable<string> SplitBy(this string auxs, params string[] separators) => auxs.Split(separators, StringSplitOptions.None);
 
-        public static IEnumerable<IEnumerable<string>> SplitByTab(this IEnumerable<string> rows)
-        {
-            return rows.Select(s => s.SplitBy(new char[] { '\t' }));
-        }
+        public static IEnumerable<IEnumerable<string>> SplitByTab(this IEnumerable<string> rows) => rows.Select(s => s.SplitBy(new char[] { '\t' }));
 
         public static string CleanFileName(this string fileName)
         {
@@ -623,9 +546,6 @@ namespace APIMocker.Extensiones
             {
                 workbook.Write(xfile);
             }
-
-            var msj = "Workbook generated successfully";
-            //msj.Dump();
 
             OpenFile(path);
         }
