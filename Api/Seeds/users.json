@@ -1,57 +1,67 @@
 [
   {
-    "id": 1,
+    "userId": 1,
+    "username": "Luis Suarez",
     "firstName": "Luis",
     "middleName": "",
     "lastName": "Suarez",
+    "name" : "",
     "suffix": "Mr.",
-    "emailAddress": "lsuarez@barcelona.com",
+    "email": "lsuarez@barcelona.com",
     "password": "4*&c^crH~Z%9",
-    "roleId": 2,
-    "role": "Admin"
+    "appRoleId": 2,
+    "appRole": "Admin"
   },
   {
-    "id": 2,
+    "userId": 2,
+    "username": "Lionel Messi",
     "firstName": "Lionel",
     "middleName": "",
     "lastName": "Messi",
+    "name": "",
     "suffix": "Mr.",
-    "emailAddress": "lmessi@barcelona.com",
+    "email": "lmessi@barcelona.com",
     "password": "PO2PosU$A7fB",
-    "roleId": 1,
-    "role": "User"
+    "appRoleId": 1,
+    "appRole": "User"
   },
   {
-    "id": 3,
+    "userId": 3,
+    "username": "Phillipe Coutinho",
     "firstName": "Phillipe",
     "middleName": "",
     "lastName": "Coutinho",
+    "name": "",
     "suffix": "",
-    "emailAddress": "pcoutinho@barcelona.com",
+    "email": "pcoutinho@barcelona.com",
     "password": "vOUFfsOva#iD",
-    "roleId": 1,
-    "role": "User"
+    "appRoleId": 1,
+    "appRole": "User"
   },
   {
-    "id": 4,
+    "userId": 4,
+    "username": "Gerard Pique",
     "firstName": "Gerard",
     "middleName": "",
     "lastName": "Pique",
+    "name": "",
     "suffix": "",
-    "emailAddress": "gpique@barcelona.com",
+    "email": "gpique@barcelona.com",
     "password": "vOUFfsOva#iD",
-    "roleId": 2,
-    "role": "Admin"
+    "appRoleId": 2,
+    "appRole": "Admin"
   },
   {
-    "id": 5,
+    "userId": 5,
+    "username": "Jordi Alba",
     "firstName": "Jordi",
     "middleName": "",
     "lastName": "Alba",
+    "name": "",
     "suffix": "",
-    "emailAddress": "jalba@barcelona.com",
+    "email": "jalba@barcelona.com",
     "password": "vOUFfsOva#iD",
-    "roleId": 1,
-    "role": "User"
+    "appRoleId": 1,
+    "appRole": "User"
   }
 ]

@@ -99,7 +99,7 @@ namespace APIMocker.Controllers
         // POST == Add
         [HttpPost]
         public virtual IHttpActionResult Post(T model)
-        {
+        {                              
             if (Store.Add(model))
             {
                 return Ok(Store.Get(u => Selector(u, Config.Key(model))));

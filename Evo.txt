@@ -1,4 +1,6 @@
 Project Evolution:
 
+	- Manage a way to change from the child API Controller the name and type of the 'GET' params. (to avoid the problem with 'id' and 'userId')
+
 
 
