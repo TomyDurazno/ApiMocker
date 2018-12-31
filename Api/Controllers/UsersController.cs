@@ -19,7 +19,11 @@ namespace Api.Controllers
         public override IHttpActionResult Post(User model)
         {
             //Auto-incremental primary key
-            var lastId = Store.GetAll().Select(u => Config.Key(u)).Max().Project(Convert.ToInt32).Project(n => (n + 1));
+            var lastId = Store.GetAll()
+                              .Select(Config.Key)
+                              .Max()
+                              .Project(n => Convert.ToInt32(n) + 1);
+
             model.userId = lastId;
             return base.Post(model);    
         }
