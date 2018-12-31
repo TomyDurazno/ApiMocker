@@ -50,6 +50,8 @@ namespace APIMocker.Controllers
 
         #endregion
 
+        #region RESTful endpoints
+
         #region GET ALL
         /// <summary>
         /// Parameterless 'GET'
@@ -143,6 +145,8 @@ namespace APIMocker.Controllers
             Store.Reset();
             return Ok();
         }
+
+        #endregion
 
         #endregion
     }

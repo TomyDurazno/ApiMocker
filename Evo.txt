@@ -2,5 +2,23 @@ Project Evolution:
 
 	- Manage a way to change from the child API Controller the name and type of the 'GET' params. (to avoid the problem with 'id' and 'userId')
 
+Status 2:
 
+	Decoupling the notion of the rest Mock API from the State (caching) mechanism
+	
+		Edit: That can be done implementing 'Store' class.
+		
+Status 3:
+
+	Evaluate the notion of a 'Model' Store (right now only works with ICollection<T>) 
+	
+		-> Cache-based ngRx/Redux ? 
+		
+	Edit:
+
+		Implement:
+		
+		- Cache-based ngRx/Redux
+		
+		- ACID transactions for both 'Store' & 'ModelStore' (adding locks to CRUD transactions) 
 

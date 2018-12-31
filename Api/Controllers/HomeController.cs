@@ -1,4 +1,5 @@
-﻿using APIMocker.Models;
+﻿using APIMocker.Controllers;
+using APIMocker.Models;
 using ServiceCore;
 using ServiceCore.Entidades;
 using System;
@@ -32,14 +33,16 @@ namespace Api.Controllers
         {
             var asm = Assembly.GetExecutingAssembly();
 
-            return asm.GetTypes()
-                    .Where(type => typeof(ApiController).IsAssignableFrom(type))
+            var elements = asm.GetTypes()
+                    .Where(type => typeof(MockAPIController<>).IsAssignableFrom(type))
                     .SelectMany(type => type.GetMethods())
                   //  .Where(m => !m.GetCustomAttributes(typeof(System.Runtime.CompilerServices.CompilerGeneratedAttribute), true).Any())
                     .Select(x => new ControllerActionElement(x))
                     .OrderBy(x => x.Controller)
                     .ThenBy(x => x.Action)
                     .ToList();
+
+            return elements;
         }
     }
 }

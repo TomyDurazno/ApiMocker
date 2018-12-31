@@ -271,6 +271,7 @@
     <Compile Include="Configs\BaseMockApiConfig.cs" />
     <Compile Include="Controllers\BaseMockAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AppModelController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Extensiones\VariousExtensions.cs" />
@@ -284,6 +285,7 @@
     <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MockEnums\Roles.cs" />
+    <Compile Include="Models\MockModels\AppModel.cs" />
     <Compile Include="Models\MockModels\RoleModel.cs" />
     <Compile Include="Models\MockModels\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -353,6 +355,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Seeds\users.json" />
     <Content Include="Seeds\roles.json" />
+    <Content Include="Seeds\AppModel.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
