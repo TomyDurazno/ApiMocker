@@ -43,7 +43,7 @@ namespace APIMocker.Controllers
             if(string.IsNullOrEmpty(Config.Seed))
                 return new List<T>();           
             else
-                return Seeds.Seeds.From<T>(Config.Seed);                            
+                return Seeds.Seeds.FromCollection<T>(Config.Seed);                            
         }
 
         private bool Selector(T item, string key) => Config.Key(item).Equals(key);

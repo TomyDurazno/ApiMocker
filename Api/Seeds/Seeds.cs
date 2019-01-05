@@ -14,10 +14,21 @@ namespace APIMocker.Seeds
 
         private static string GetFormatted(string fileName) => string.Format(SeedFilePathTemplate, fileName);
 
-        public static ICollection<T> From<T>(string fileName)
+        public static ICollection<T> FromCollection<T>(string fileName)
         {
             using (var sr = new StreamReader(GetFormatted(fileName), Encoding.UTF8))
                 return JsonConvert.DeserializeObject<ICollection<T>>(sr.ReadToEnd());
+        }
+
+        public static T FromModel<T>(string fileName)
+        {
+            using (var sr = new StreamReader(GetFormatted(fileName), Encoding.UTF8))
+            {
+                var lines = sr.ReadToEnd();
+                var obj = JsonConvert.DeserializeObject<T>(lines);
+                return obj;
+            }
+
         }
     }
 }

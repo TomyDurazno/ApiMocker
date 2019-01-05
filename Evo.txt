@@ -22,3 +22,6 @@ Status 3:
 		
 		- ACID transactions for both 'Store' & 'ModelStore' (adding locks to CRUD transactions) 
 
+Status 4:
+
+	Added 'Model Store' class, the Store know handles State objects, but CID not implemented yet. 

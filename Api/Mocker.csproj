@@ -274,6 +274,7 @@
     <Compile Include="Controllers\AppModelController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\BaseModelMockAPIController.cs" />
     <Compile Include="Extensiones\VariousExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

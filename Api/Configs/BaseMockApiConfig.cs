@@ -23,4 +23,19 @@ namespace APIMocker.Configs
             };
         }
     }
+
+    public class MockModelAPIConfig
+    {
+        public string StoreName { get; set; }
+        public string Seed { get; set; }
+
+        public static MockModelAPIConfig Make(string Storename, string Seed = null)
+        {
+            return new MockModelAPIConfig
+            {
+                StoreName = Storename,
+                Seed = Seed
+            };
+        }
+    }
 }
