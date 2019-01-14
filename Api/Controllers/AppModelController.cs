@@ -37,5 +37,11 @@ namespace APIMocker.Controllers
 
             return Ok(state.Users.Select(u => u.username));
         }
+
+        [Route("reseed")]
+        public IHttpActionResult Reseed()
+        {
+            return Ok(ReplaceSeed());
+        }
     }
 }

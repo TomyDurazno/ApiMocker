@@ -42,5 +42,15 @@ namespace APIMocker.Controllers
         }
 
         #endregion
+
+        #region Public Methods
+
+        public bool ReplaceSeed()
+        {
+            var state = Store.State;
+            return Seeds.Seeds.ReplaceSeed(state, Config.Seed);
+        }
+
+        #endregion
     }
 }

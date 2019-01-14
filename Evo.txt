@@ -25,3 +25,7 @@ Status 3:
 Status 4:
 
 	Added 'Model Store' class, the Store know handles State objects, but CID not implemented yet. 
+	
+Status 5:
+
+	Added "Replace Seed" feature in 'ModelStore' based controller

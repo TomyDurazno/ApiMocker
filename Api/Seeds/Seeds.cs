@@ -30,5 +30,22 @@ namespace APIMocker.Seeds
             }
 
         }
+
+        public static bool ReplaceSeed<T>(T model, string fileName)
+        {
+            try
+            {
+                using (var sr = new StreamWriter(GetFormatted(fileName), false, Encoding.UTF8))
+                {
+                    var serializer = new JsonSerializer();
+                    serializer.Serialize(sr, model);
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
