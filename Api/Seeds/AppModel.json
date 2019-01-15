@@ -1,1 +1,91 @@
-﻿{"Name":"AppModel_Seed","Users":[{"userId":1,"username":"Luis Suarezd19054f3-09a1-4364-b80e-c33c6b8ba6ca","firstName":"Luis","middleName":"","lastName":"Suarezd19054f3-09a1-4364-b80e-c33c6b8ba6ca","name":"","suffix":"Mr.","email":"lsuarez@barcelona.com","password":"4*&c^crH~Z%9","appRoleId":2,"appRole":"Admin"},{"userId":2,"username":"Lionel Messi0d50d832-7722-487b-b583-99713c0eb242","firstName":"Lionel","middleName":"","lastName":"Messi0d50d832-7722-487b-b583-99713c0eb242","name":"","suffix":"Mr.","email":"lmessi@barcelona.com","password":"PO2PosU$A7fB","appRoleId":1,"appRole":"User"},{"userId":3,"username":"Phillipe Coutinho6c16185a-5e4b-4291-bd6b-460b0b73a248","firstName":"Phillipe","middleName":"","lastName":"Coutinho6c16185a-5e4b-4291-bd6b-460b0b73a248","name":"","suffix":"","email":"pcoutinho@barcelona.com","password":"vOUFfsOva#iD","appRoleId":1,"appRole":"User"},{"userId":4,"username":"Gerard Pique02bc7cc0-95b0-4592-8f6f-a69c52d34d0a","firstName":"Gerard","middleName":"","lastName":"Pique02bc7cc0-95b0-4592-8f6f-a69c52d34d0a","name":"","suffix":"","email":"gpique@barcelona.com","password":"vOUFfsOva#iD","appRoleId":2,"appRole":"Admin"},{"userId":5,"username":"Jordi Alba088c644b-2878-4078-a1cd-11ccb38d95d4","firstName":"Jordi","middleName":"","lastName":"Alba088c644b-2878-4078-a1cd-11ccb38d95d4","name":"","suffix":"","email":"jalba@barcelona.com","password":"vOUFfsOva#iD","appRoleId":1,"appRole":"User"}],"Roles":[{"id":"1","role":"Admin","usercount":1,"type":"Default"},{"id":"2","role":"User","usercount":2,"type":"Default"},{"id":"3","role":"Reporter","usercount":1,"type":"Custom"}]}
+﻿{
+  "Name": "AppModel_Seed",
+  "Users": [
+    {
+      "userId": 1,
+      "username": "Luis Suarez",
+      "firstName": "Luis",
+      "middleName": "",
+      "lastName": "Suarez",
+      "name": "",
+      "suffix": "Mr.",
+      "email": "lsuarez@barcelona.com",
+      "password": "4*&c^crH~Z%9",
+      "appRoleId": 2,
+      "appRole": "Admin"
+    },
+    {
+      "userId": 2,
+      "username": "Lionel Messi",
+      "firstName": "Lionel",
+      "middleName": "",
+      "lastName": "Messi",
+      "name": "",
+      "suffix": "Mr.",
+      "email": "lmessi@barcelona.com",
+      "password": "PO2PosU$A7fB",
+      "appRoleId": 1,
+      "appRole": "User"
+    },
+    {
+      "userId": 3,
+      "username": "Phillipe Coutinho",
+      "firstName": "Phillipe",
+      "middleName": "",
+      "lastName": "Coutinho",
+      "name": "",
+      "suffix": "",
+      "email": "pcoutinho@barcelona.com",
+      "password": "vOUFfsOva#iD",
+      "appRoleId": 1,
+      "appRole": "User"
+    },
+    {
+      "userId": 4,
+      "username": "Gerard Pique",
+      "firstName": "Gerard",
+      "middleName": "",
+      "lastName": "Pique",
+      "name": "",
+      "suffix": "",
+      "email": "gpique@barcelona.com",
+      "password": "vOUFfsOva#iD",
+      "appRoleId": 2,
+      "appRole": "Admin"
+    },
+    {
+      "userId": 5,
+      "username": "Jordi Alba",
+      "firstName": "Jordi",
+      "middleName": "",
+      "lastName": "Alba",
+      "name": "",
+      "suffix": "",
+      "email": "jalba@barcelona.com",
+      "password": "vOUFfsOva#iD",
+      "appRoleId": 1,
+      "appRole": "User"
+    }
+  ],
+  "Roles": [
+    {
+      "id": "1",
+      "role": "Admin",
+      "usercount": 1,
+      "type": "Default"
+    },
+    {
+      "id": "2",
+      "role": "User",
+      "usercount": 2,
+      "type": "Default"
+    },
+    {
+      "id": "3",
+      "role": "Reporter",
+      "usercount": 1,
+      "type": "Custom"
+    }
+  ]
+}
+
