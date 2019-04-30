@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ServiceCore.Recursos
 {
-    public class GlobalCache
+    public class GlobalCache : IGlobalCache
     {
         #region Constantes
 
@@ -54,5 +54,13 @@ namespace ServiceCore.Recursos
             var cache = MemoryCache.Default;
             cache.Remove(Name);
         }
+    }
+
+    public interface IGlobalCache
+    {
+        string Name { get; set; }
+        void SetItem<T>(T item, int expiresIn);
+        T GetItem<T>();
+        void RemoveItem();
     }
 }
