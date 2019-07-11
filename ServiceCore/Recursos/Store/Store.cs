@@ -37,7 +37,7 @@ namespace ServiceCore.Recursos
 
         #region State Management
 
-        private GlobalCache GlobalCache { get => new GlobalCache(Name); }
+        GlobalCache GlobalCache { get => new GlobalCache(Name); }
 
         public ICollection<T> State 
         {

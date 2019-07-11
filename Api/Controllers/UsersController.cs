@@ -20,8 +20,7 @@ namespace Api.Controllers
             //Auto-incremental primary key
             var lastId = Store.GetAll()
                               .Select(Config.Key)
-                              .Max()
-                              .Project(n => Convert.ToInt32(n) + 1);
+                              .Pipe(e => e.Select(k => Convert.ToInt32(k)).Max() + 1);                         
 
             model.userId = lastId;
             return base.Post(model);    

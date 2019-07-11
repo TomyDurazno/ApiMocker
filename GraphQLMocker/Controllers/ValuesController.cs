@@ -56,25 +56,23 @@ namespace GraphQLMocker.Controllers
             return result;
         }
 
-        // GET api/values/5
-        public string Get(int id)
+        [Route("tests")]
+        [HttpGet]
+        public IHttpActionResult Tests()
         {
-            return "value";
-        }
+            EntityFrameworkExecutionTests.Init();
 
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
+            var ef = new EntityFrameworkExecutionTests();
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+            var methods = ef.GetType()
+                .GetMethods()
+                .Where(m => m.GetCustomAttributes(typeof(TestAttribute), true).Any())
+                .Select(m => new { m.Name, Exec = (bool)m.Invoke(ef, null) })
+                .ToList();
 
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
+            var tests = methods.GroupBy(n => n.Exec);
+
+            return Ok(tests);
         }
     }
 

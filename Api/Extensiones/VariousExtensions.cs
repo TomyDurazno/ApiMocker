@@ -676,6 +676,35 @@ namespace APIMocker.Extensiones
         }
 
         #endregion
+
+        #region Pipe 
+
+        /// <summary>
+        /// Pipes 1 function
+        /// </summary>
+        public static K Pipe<T, K>(this T obj, Func<T, K> fun) => fun(obj);
+
+        /// <summary>
+        /// Pipes 2 functions
+        /// </summary>
+        public static S Pipe<T, K, S>(this T obj, Func<T, K> fun1, Func<K, S> fun2) => fun2(fun1(obj));
+
+        /// <summary>
+        /// Pipes 3 functions
+        /// </summary>
+        public static R Pipe<T, K, S, R>(this T obj, Func<T, K> fun1, Func<K, S> fun2, Func<S, R> fun3) => fun3(fun2(fun1(obj)));
+
+        /// <summary>
+        /// Pipes 4 functions
+        /// </summary>
+        public static G Pipe<T, K, S, R, G>(this T obj, Func<T, K> fun1, Func<K, S> fun2, Func<S, R> fun3, Func<R, G> fun4) => fun4(fun3(fun2(fun1(obj))));
+
+        /// <summary>
+        /// Pipes 5 functions
+        /// </summary>
+        public static H Pipe<T, K, S, R, G, H>(this T obj, Func<T, K> fun1, Func<K, S> fun2, Func<S, R> fun3, Func<R, G> fun4, Func<G, H> fun5) => fun5(fun4(fun3(fun2(fun1(obj)))));
+
+        #endregion
     }
 
     #endregion
@@ -1112,4 +1141,6 @@ namespace APIMocker.Extensiones
     }
 
     #endregion
+
+
 }

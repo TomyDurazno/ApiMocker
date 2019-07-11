@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace GraphQLMocker
@@ -19,6 +20,10 @@ namespace GraphQLMocker
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Force to ignore Request Content Type Header and reply only JSON
+            config.Formatters.Clear();
+            config.Formatters.Add(new JsonMediaTypeFormatter());
         }
     }
 }
