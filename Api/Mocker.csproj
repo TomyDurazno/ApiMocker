@@ -270,9 +270,11 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Configs\BaseMockApiConfig.cs" />
     <Compile Include="Controllers\BaseMockAPIController.cs" />
+    <Compile Include="Controllers\BillingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AppModelController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\ToDoController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\BaseModelMockAPIController.cs" />
     <Compile Include="Extensiones\VariousExtensions.cs" />
@@ -288,6 +290,7 @@
     <Compile Include="Models\MockEnums\Roles.cs" />
     <Compile Include="Models\MockModels\AppModel.cs" />
     <Compile Include="Models\MockModels\RoleModel.cs" />
+    <Compile Include="Models\MockModels\ToDo.cs" />
     <Compile Include="Models\MockModels\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -357,9 +360,11 @@
     <Content Include="Seeds\users.json" />
     <Content Include="Seeds\roles.json" />
     <Content Include="Seeds\AppModel.json" />
+    <Content Include="Seeds\ToDo.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ToDo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
